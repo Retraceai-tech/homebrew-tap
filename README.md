@@ -19,18 +19,22 @@ Record, replay, fork, and manage AI agent traces from your terminal — installa
 
 ## Install
 
-```bash
-brew install --cask retraceai-tech/tap/retrace-cli
-```
-
-On Homebrew 6.0+ the fully-qualified `--cask` form taps and trusts this repository automatically — no separate `brew tap` / `brew trust` step. The CLI installs as the `retrace` command.
+Add the tap once, then install with the short name:
 
 ```bash
-brew upgrade --cask retrace-cli      # update
-brew uninstall --cask retrace-cli    # remove
+brew tap retraceai-tech/homebrew-tap
+brew trust retraceai-tech/tap
+brew install retrace-cli
 ```
 
-> The cask token is `retrace-cli` (the command is still `retrace`) to avoid a collision with an unrelated `retrace` app in homebrew-cask.
+The CLI installs as the `retrace` command.
+
+```bash
+brew upgrade retrace-cli      # update
+brew uninstall retrace-cli    # remove
+```
+
+> Prefer a single command (no tap/trust step)? `brew install --cask retraceai-tech/tap/retrace-cli` also works — the fully-qualified form taps and trusts automatically on Homebrew 6.0+. The cask token is `retrace-cli` (the command is still `retrace`) to avoid a collision with an unrelated `retrace` app in homebrew-cask.
 
 ## How it works
 
