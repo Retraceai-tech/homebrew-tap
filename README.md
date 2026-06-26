@@ -4,11 +4,13 @@ The official [Homebrew](https://brew.sh) tap for the **Retrace CLI** — record,
 manage AI agent traces from your terminal. Works on macOS, Linux, and WSL.
 
 ```bash
-brew install --cask retraceai-tech/tap/retrace
+brew install --cask retraceai-tech/tap/retrace-cli
 ```
 
-Upgrade with `brew upgrade --cask retrace`, uninstall with `brew uninstall --cask retrace`.
+Upgrade with `brew upgrade --cask retrace-cli`, uninstall with `brew uninstall --cask retrace-cli`.
+The CLI installs as the `retrace` command. (The cask token is `retrace-cli` to avoid a collision
+with an unrelated `retrace` app in homebrew-cask.)
 
-The cask in `Casks/retrace.rb` is **auto-generated** by the Retrace CLI release pipeline on every
+The cask in `Casks/retrace-cli.rb` is **auto-generated** by the Retrace CLI release pipeline on every
 new version (do not edit it by hand) and downloads the prebuilt binary for your platform from the
 Retrace CDN — the same artifacts used by `curl -fsSL https://retraceai.tech/install.sh | sh`.
