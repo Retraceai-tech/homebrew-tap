@@ -38,6 +38,13 @@ cask "retrace" do
     regex(/(\d+(?:\.\d+)+)/i)
   end
 
+  # The binary isn't yet Developer ID-signed/notarized, so Homebrew's download quarantine would make
+  # Gatekeeper block it on first run. Strip the quarantine attribute on install so `brew install` is
+  # seamless. (Durable fix: codesign + notarize in CI — then this can be removed.)
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", staged_path], must_succeed: false
+  end
+
   caveats <<~EOS
     Retrace has been installed as `retrace`.
 
