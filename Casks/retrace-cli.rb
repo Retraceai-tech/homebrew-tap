@@ -51,6 +51,6 @@ cask "retrace-cli" do
       retrace auth login
       retrace --help
 
-    Update with: brew upgrade --cask retrace-cli
+    Update with: brew upgrade retrace-cli
   EOS
 end
