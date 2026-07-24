@@ -5,12 +5,12 @@ cask "retrace-cli" do
 
   on_macos do
     on_arm do
-      sha256 "e6318411b95348e4ab7fc0ae3689917682f588bc94c18f99062b6ca97f5c602b"
+      sha256 "98a69e624cbad6d6b3d8dc2023e18eb428bfa7ca2aa0b5f97e6ef9ef528cadf1"
       url "https://cdn.retraceai.tech/cli/#{version}/retrace-darwin-aarch64"
       binary "retrace-darwin-aarch64", target: "retrace"
     end
     on_intel do
-      sha256 "35e4c5dc8c7e998031a780cf6f99fdcc968de208132690044b1b606d7c08ac91"
+      sha256 "6bd7ffb5cb1a5c36ea86b6921737f1ad895752812527bdbf2903bfeeef9855a4"
       url "https://cdn.retraceai.tech/cli/#{version}/retrace-darwin-x86_64"
       binary "retrace-darwin-x86_64", target: "retrace"
     end
@@ -18,12 +18,12 @@ cask "retrace-cli" do
 
   on_linux do
     on_arm do
-      sha256 "deca7645bd23b49306068a49c3f7f3fb2cdbb24b47ecf365fec86c9f3c85b728"
+      sha256 "d3659d21f0ce83fe92c19d42d3d3a0eae90b79920bec738b599fc8bb88bf90ab"
       url "https://cdn.retraceai.tech/cli/#{version}/retrace-linux-aarch64"
       binary "retrace-linux-aarch64", target: "retrace"
     end
     on_intel do
-      sha256 "35c58f9c959a501662a94df75693e793b9fecac991e5590f54b987cbba2fd98e"
+      sha256 "4fd6adee6e76a202407c3cb1d3e790e388c1bd28a13faf5b6c7795dc2fa37bd6"
       url "https://cdn.retraceai.tech/cli/#{version}/retrace-linux-x86_64"
       binary "retrace-linux-x86_64", target: "retrace"
     end
