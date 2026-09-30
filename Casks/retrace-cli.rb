@@ -40,9 +40,12 @@ cask "retrace-cli" do
 
   # The binary isn't yet Developer ID-signed/notarized, so Homebrew's download quarantine would make
   # Gatekeeper block it on first run. Strip the quarantine attribute on install so `brew install` is
-  # seamless. (Durable fix: codesign + notarize in CI — then this can be removed.)
+  # seamless. (Durable fix: codesign + notarize in CI — then this can be removed.) macOS only: xattr
+  # and Gatekeeper quarantine don't exist on Linux.
   postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", staged_path], must_succeed: false
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", staged_path], must_succeed: false
+    end
   end
 
   caveats <<~EOS
@@ -51,6 +54,8 @@ cask "retrace-cli" do
       retrace auth login
       retrace --help
 
-    Update with: brew upgrade retrace-cli
+    Update with: brew upgrade --cask retrace-cli
+
+    Linux: 1.6.11 Linux binaries need glibc 2.39+; 1.6.12+ are static.
   EOS
 end
